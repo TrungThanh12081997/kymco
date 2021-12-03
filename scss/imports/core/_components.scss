@@ -1,0 +1,337 @@
+// css img, button, heading, title, input, elements, components...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    object-fit: cover;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+// colors (tuỳ chỉnh)
+// .--white-cl {
+//     color: $white-cl;
+// }
+// .--black-cl {
+//     color: $black-cl;
+// }
+// .--blue-cl {
+//     color: $blue-cl;
+// }
+// css article (nội dung chi tiết bài viết)
+article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        // font-family: ib; // font bold
+        display: block;
+    }
+    h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+        margin: 0 0 0.67rem 0;
+    }
+    h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+        margin: 0 0 0.75rem 0;
+    }
+    h3 {
+        font-size: var(--h3-fs);
+        line-height: var(--h3-lh);
+        margin: 0 0 0.83rem 0;
+    }
+    h4 {
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+        margin: 0 0 1.12rem 0;
+    }
+    h5 {
+        font-size: var(--h5-fs);
+        line-height: var(--h5-lh);
+        margin: 0 0 1.5rem 0;
+    }
+    h6 {
+        font-size: 0.67rem;
+        margin: 0 0 1.67rem 0;
+    }
+    p {
+        margin: 0 0 1.12rem 0;
+    }
+    strong {
+        // font-family: ib; // font bold
+    }
+    ol,
+    ul {
+        list-style: initial;
+        padding-left: 18px;
+    }
+    img {
+        display: inline-block;
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        object-fit: cover;
+        margin: 25px auto;
+        object-fit: cover;
+    }
+    .video {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        margin: 25px auto;
+        iframe,
+        video {
+            position: absolute;
+            // @include size(100%);
+            top: 0;
+            left: 0;
+        }
+    }
+    // @include xs {
+    //     img {
+    //         margin: 20px auto;
+    //     }
+    // }
+}
+
+.heading {
+    font-family: ib;
+    &.--h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+    }
+    &.--h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+    }
+}
+
+.btnmain {
+    padding: 10px 25px;
+    background-color: #f4352c;
+    font-size: 16px;
+    font-family: sa;
+    line-height: 21px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sa;
+    border-radius: 24px;
+    width: max-content;
+    @include xs {
+        padding: 5px 15px;
+        font-size: 12px;
+    }
+}
+
+// .flex {
+//     @include mid(true);
+// }
+.container {
+    .page {
+        // position: absolute;
+        display: block;
+        &.hide {
+            display: none;
+        }
+        .col3 {
+            display: flex;
+            justify-content: space-between;
+            margin: 60px 0;
+            @media (max-width: 992px) {
+                display: block;
+            }
+            &__item {
+                border: 0.15px solid rgb(161, 161, 161);
+                position: relative;
+                width: 32%;
+                min-height: 700px;
+                @media (max-width: 992px) {
+                    width: 100%;
+                    margin-bottom: 40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                @include xs {
+                    min-height: 600px;
+                }
+                &-img {
+                    width: 100%;
+                    // height: 350px;
+                    overflow: hidden;
+                    margin-bottom: 25px;
+                    img {
+                        // @include midimg();
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                h2 {
+                    letter-spacing: 0.4px;
+                    @include text(40px, db, 40px, $black-cl, uppercase);
+                    margin: 22px 0;
+                    // width: 50%;
+                    // text-align: center;
+                    padding: 0 30px;
+                    @include xs {
+                        @include text(28px, db, 40px, $black-cl, uppercase);
+                    }
+                }
+                h3 {
+                    letter-spacing: 0.4px;
+                    @include text(20px, db, 20px, $black-cl, uppercase);
+                    @include xs {
+                        @include text(16px, db, 32px, $black-cl, uppercase);
+                    }
+                    padding:0 30px;
+                }
+                p {
+                    letter-spacing: 0.4px;
+                    max-width: 400px;
+                    text-align: center;
+                    @include text(16px, ua, 20px, $black-cl, none);
+                    @include overtext(3);
+                    @include xs {
+                        @include text(12px, ua, 24px, $black-cl, uppercase);
+                    }
+                    padding:0 30px;
+                }
+                a {
+                    letter-spacing: 0.4px;
+                    @include text(16px, ua, 20px, $black-cl, none);
+                    text-decoration: underline;
+                    position: absolute;
+                    bottom: 35px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+.network {
+    height: 650px;
+    width: 100vw;
+    margin-top: 60px;
+    position: relative;
+    @include xs {
+        height: 480px;
+    }
+    .network__img {
+        width: 100%;
+        height: 100%;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .earth {
+            z-index: 1;
+            max-width: 1240px;
+            height: 480px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 25%;
+        }
+    }
+    h2 {
+        z-index: 3;
+        @include text(60px, s, 60px, $black-cl, uppercase);
+        letter-spacing: 0.4px;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        @include xs {
+            @include text(28px, s, 48px, black, uppercase);
+        }
+    }
+    p {
+        z-index: 3;
+        @include text(22px, ua, 22px, $black-cl, uppercase);
+        letter-spacing: 0.4px;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        @include xs {
+            @include text(16px, ua, 32px, black, uppercase);
+        }
+    }
+    a {
+        z-index: 3;
+        position: absolute;
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.accord {
+    margin-bottom: 30px;
+    @include xs {
+        margin: 0;
+    }
+    &__title {
+        h2 {
+            @include text(22px, s, 36px, black, uppercase);
+            max-width: 400px;
+            cursor: pointer;
+            @include xs {
+                @include text(18px, s, 36px, black, uppercase);
+            }
+        }
+        position: relative;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            background-color: black;
+            height: 4px;
+            width: 32px;
+            transition: $t;
+            @include xs {
+                display: none;
+            }
+        }
+        &.active {
+            &::after {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    p {
+        @include text(16px, ua, 20px, black, none);
+        height: 0;
+        overflow: hidden;
+        transition: $t;
+        margin: 20px 0;
+        @include xs {
+            @include text(12px, ua, 16px, black, none);
+        }
+    }
+}

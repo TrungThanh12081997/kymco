@@ -1,0 +1,33 @@
+.page__nav {
+    max-height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    .step-next,
+    .step-prev {
+        margin: 20px 13px;
+        @include text(20px, s, 30px, black, uppercase);
+        @include xs {
+            @include text(16px, s, 16px, black, uppercase);
+        }
+    }
+    &-number {
+        @include mid(true);
+        span {
+            @include mid(true);
+            --grid: 60px;
+            height: var(--grid);
+            width: var(--grid);
+            @include text(30px, s, 30px, black, uppercase);
+            @include xs {
+                @include text(22px, s, 22px, black, uppercase);
+            }
+            &.active {
+                background-color: $main-cl;
+                color: white;
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+.stores {
+    .stores__title {
+        @include text(40px, s, 40px, black, uppercase);
+        @include mid(true);
+        margin-bottom: 70px;
+        text-align: center;
+        @include xs {
+            @include text(32px, s, 32px, black, uppercase);
+            margin-bottom: 40px;
+        }
+    }
+    .stores__content {
+        display: flex;
+        width: 100%;
+        max-height: 800px;
+        @include sm {
+            flex-direction: column-reverse;
+            align-items: center;
+            max-height: none;
+        }
+        .stores__left {
+            width: 45%;
+            @include sm {
+                width: 100%;
+            }
+            .stores__select {
+                background-color: $main-cl;
+                padding: 30px 0;
+                height: 25%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .select__title {
+                    display: flex;
+                    padding-bottom: 40px;
+                    position: relative;
+                    width: 90%;
+                    margin: 0px 40px;
+                    &::before {
+                        width: 100%;
+                        height: 3px;
+                        position: absolute;
+                        bottom: 5px;
+                        background-color: white;
+                        left: 0;
+                        content: "";
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 35%;
+                        height: 60%;
+                        width: 2px;
+                        background-color: white;
+                        ;
+                    }
+                    h2 {
+                        @include text(35px, s, 40px, rgba(255, 255, 255, 0.7), uppercase);
+                        padding-right: 35px;
+                        width: 40%;
+                        @include xs {
+                            @include text(28px, s, 40px, rgba(255, 255, 255, 0.7), uppercase);
+                        }
+                    }
+                    .active {
+                        @include text(35px, s, 40px, rgb(255, 255, 255), uppercase);
+                        @include xs {
+                            @include text(28px, s, 40px, rgb(255, 255, 255), uppercase);
+                        }
+                    }
+                }
+                .select__option {
+                    margin: 20px 0 0px 35px;
+                    select {
+                        border-left: none;
+                        border-right: none;
+                        border-top: none;
+                        border-bottom: 1px solid white;
+                        background-color: $main-cl;
+                        margin-right: 20px;
+                        @include text(22px, ua, 25px, white, none);
+                        @include sm {
+                            width: 45%;
+                        }
+                        @include xs {
+                            @include text(16px, ua, 22px, rgb(255, 255, 255), uppercase);
+                        }
+                        padding-bottom: 10px;
+                        option {
+                            @include text(22px, ua, 25px, white, none);
+                            max-width: 100%;
+                            @include xs {
+                                @include text(16px, ua, 22px, rgb(255, 255, 255), uppercase);
+                            }
+                        }
+                    }
+                }
+            }
+            .stores__list {
+                overflow: auto;
+                padding: 40px 0 40px 40px;
+                height: 75%;
+                position: relative;
+                &::-webkit-scrollbar {
+                    width: 12px;
+                }
+                &::-webkit-scrollbar-track {
+                    background: white;
+                }
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    background: $main-cl;
+                    height: 2px;
+                    border-radius: 24px;
+                }
+                &-item {
+                    padding: 40px 0 30px 0;
+                    border-bottom: 1px solid black;
+                    h2 {
+                        @include text(30px, s, 40px, black, uppercase);
+                        @include xs {
+                            @include text(22px, s, 22px, black, uppercase);
+                        }
+                    }
+                    .stores__info {
+                        display: flex;
+                        align-items: center;
+                        margin: 10px 0;
+                        i {
+                            font-size: 30px;
+                            @include xs {
+                                font-size: 22px;
+                            }
+                            margin-right: 15px;
+                        }
+                        p {
+                            @include text(18px, ua, 25px, black, none);
+                            @include xs {
+                                @include text(12px, ua, 20px, black, uppercase);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .stores__map {
+            width: 60%;
+            @include sm {
+                width: 100%;
+                height: 300px;
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .clear {
+        clear: both;
+    }
+}

@@ -1,0 +1,345 @@
+.about {
+    &__part {
+        display: flex;
+        @include mid(true);
+        padding-bottom: 40px;
+        cursor: pointer;
+        @include sm {
+            flex-direction: column;
+        }
+        border-bottom: 1px solid rgb(197, 197, 197);
+        &-item {
+            &.vip {
+                position: relative;
+                &::after,
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 100%;
+                    top: 10%;
+                    background-color: black;
+                    width: 2px;
+                    @include sm {
+                        top: 0;
+                    }
+                }
+                &::after {
+                    right: 0;
+                    @include sm {
+                        right: -30%;
+                    }
+                }
+                &::before {
+                    left: 0;
+                    @include sm {
+                        left: -30%;
+                    }
+                }
+            }
+            padding: 0 45px;
+            @include text(50px, s, 71px, rgba(0, 0, 0, 0.3), uppercase);
+            @include xs {
+                @include text(40px, s, 50px, rgba(0, 0, 0, 0.3), uppercase);
+            }
+            &.active {
+                @include text(50px, s, 71px, black, uppercase);
+                @include xs {
+                    @include text(40px, s, 50px, rgb(0, 0, 0), uppercase);
+                }
+            }
+        }
+    }
+    &__section {
+        display: none;
+        &.active {
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            .about__content {
+                text-align: center;
+                h2 {
+                    padding: 50px 0;
+                    @include text(60px, s, 60px, black, uppercase);
+                    @include xs {
+                        @include text(40px, s, 50px, black, uppercase);
+                        padding: 25px 0;
+                    }
+                }
+                p {
+                    max-width: 750px;
+                    margin: 0 auto;
+                    @include text(22px, ua, 36px, black, none);
+                    @include xs {
+                        @include text(16px, ua, 24px, black, uppercase);
+                    }
+                }
+                margin-bottom:60px;
+            }
+            .about__more {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                @include sm {
+                    flex-direction: column;
+                }
+                .col__5 {
+                    width: 19%;
+                    padding: 30px 20px;
+                    background-color: $main-cl;
+                    @include text(18px, ua, 36px, white, none);
+                    @include sm {
+                        width: 100%;
+                        margin: 5px 0;
+                    }
+                    @include xs {
+                        @include text(12px, ua, 18px, white, none);
+                    }
+                }
+            }
+        }
+        .about__slider {
+            width: 100vw;
+            position: relative;
+            .history__list {
+                height: 600px;
+                display: flex;
+                position: relative;
+                overflow: hidden;
+                @include sm {
+                    height: 800px;
+                }
+                @include sm {
+                    height: 700px;
+                }
+                .flickity-viewport {
+                    width: 100%;
+                    height: 600px;
+                }
+                .history__item {
+                    display: flex;
+                    width: 32vw;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    flex-direction: column;
+                    background-color: $main-cl;
+                    height: 100%;
+                    @include sm {
+                        width: 50vw;
+                    }
+                    @include xs {
+                        width: 100vw;
+                    }
+                    &.reverse {
+                        flex-direction: column-reverse;
+                        background-color: $white-cl;
+                        color: black;
+                        @include sm {
+                            width: 50vw;
+                        }
+                        @include xs {
+                            width: 100vw;
+                        }
+                    }
+                    &-img {
+                        height: 45%;
+                        img {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    &-content {
+                        .year {
+                            padding-bottom: 10px;
+                            position: relative;
+                            text-align: center;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                bottom: -15px;
+                                left: 50%;
+                                background-color: white;
+                                height: 4px;
+                                width: 7%;
+                                transform: translateX(-50%);
+                            }
+                            @include text(80px, s, 80px, white, uppercase);
+                            @include xs {
+                                @include text(60px, s, 60px, white, uppercase);
+                            }
+                        }
+                        p {
+                            @include text(18px, ua, 24px, white, none);
+                            padding: 30px 15px;
+                            @include xs {
+                                @include text(12px, ua, 12px, white, none);
+                            }
+                        }
+                        .year__black {
+                            padding-bottom: 10px;
+                            position: relative;
+                            text-align: center;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                bottom: -15px;
+                                left: 50%;
+                                background-color: black;
+                                height: 4px;
+                                width: 7%;
+                                transform: translateX(-50%);
+                            }
+                            @include text(80px, s, 80px, black, uppercase);
+                            @include xs {
+                                @include text(60px, s, 60px, black, uppercase);
+                            }
+                        }
+                        p {
+                            @include text(18px, ua, 24px, white, none);
+                            padding: 30px 40px;
+                            text-align: center;
+                            @include xs {
+                                @include text(12px, ua, 18px, white, none);
+                            }
+                        }
+                        .black {
+                            @include text(18px, ua, 24px, black, none);
+                            @include xs {
+                                @include text(12px, ua, 18px, black, none);
+                            }
+                            padding: 30px 40px;
+                            text-align: center
+                        }
+                    }
+                }
+            }
+            .history__btn {
+                position: absolute;
+                cursor: pointer;
+                right: 0;
+                top: 0;
+                height: 600px;
+                @include mid(true);
+                width: 100px;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        .about__map {
+            .container {
+                display: flex;
+                align-items: flex-start;
+                @include sm {
+                    flex-direction: column;
+                }
+                .map__img {
+                    width: 45%;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                    @include sm {
+                        width: 100%;
+                    }
+                }
+                .map__content {
+                    width: 55%;
+                    padding-top: 25px;
+                    @include sm {
+                        width: 100%;
+                    }
+                    p {
+                        margin: 25px 0 25px 0;
+                        padding-left: 100px;
+                        @include text(16px, ua, 24px, black, none);
+                        @include sm {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.story {
+    .story__content {
+        width: 100%;
+        margin-bottom: 70px;
+        @include xs {
+            margin-bottom: 35px;
+        }
+        h2 {
+            padding: 50px 0;
+            text-align: center;
+            @include text(60px, s, 60px, black, uppercase);
+            @include xs {
+                @include text(50px, s, 58px, black, uppercase);
+                padding: 15px 0;
+            }
+        }
+        p {
+            // max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            @include text(22px, ua, 36px, black, none);
+            @include xs {
+                @include text(16px, ua, 22px, black, uppercase);
+            }
+        }
+    }
+    .container {
+        .col__3 {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            @include sm {
+                flex-direction: column;
+            }
+            &-item {
+                width: 31%;
+                border: 0.5px solid #cccccc;
+                @include sm {
+                    width: 100%;
+                    padding: 15px 0;
+                    margin: 15px 0;
+                }
+                .story__img {
+                    height: 34%;
+                    width: 100%;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                .story__info {
+                    text-align: center;
+                    h2 {
+                        margin: 35px 0;
+                        @include text(60px, s, 66px, black, none);
+                        @include xs {
+                            @include text(50px, s, 58px, black, none);
+                            margin: 15px 0;
+                        }
+                    }
+                    p {
+                        @include text(18px, ua, 30px, black, none);
+                        @include xs {
+                            @include text(12px, ua, 18px, black, none);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.background__story {
+    background-image: url(../img/about/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    background-color: black;
+    height: 380px;
+}

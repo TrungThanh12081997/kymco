@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'd';
+    src: url('../fonts/DIN-BlackAlternate.woff2') format('woff2'), url('../fonts/DIN-BlackAlternate.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'dr';
+    src: url('../fonts/DIN-Regular.woff2') format('woff2'), url('../fonts/DIN-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'dm';
+    src: url('../fonts/DIN-Medium.woff2') format('woff2'), url('../fonts/DIN-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'dl';
+    src: url('../fonts/DIN-Light.woff2') format('woff2'), url('../fonts/DIN-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'db';
+    src: url('../fonts/DIN-Bold.woff2') format('woff2'), url('../fonts/DIN-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'dba';
+    src: url('../fonts/DIN-BlackAlternate.woff2') format('woff2'), url('../fonts/DIN-BlackAlternate.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'uai';
+    src: url('../fonts/UTMAvo-Italic.woff2') format('woff2'), url('../fonts/UTMAvo-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'ua';
+    src: url('../fonts/UTMAvo.woff2') format('woff2'), url('../fonts/UTMAvo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'uabi';
+    src: url('../fonts/UTMAvo-BoldItalic.woff2') format('woff2'), url('../fonts/UTMAvo-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'uab';
+    src: url('../fonts/UTMAvoBold.woff2') format('woff2'), url('../fonts/UTMAvoBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'uai';
+    src: url('../fonts/UTMAvo-Italic.woff2') format('woff2'), url('../fonts/UTMAvo-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'mp';
+    src: url('../fonts/MyriadPro-Bold.woff2') format('woff2'), url('../fonts/MyriadPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'mr';
+    src: url('MyriadPro-Regular.woff2') format('woff2'), url('MyriadPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'sab';
+    src: url('../fonts/SVN-Avobold.woff2') format('woff2'), url('../fonts/SVN-Avobold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'sai';
+    src: url('../fonts/SVN-Avoitalic.woff2') format('woff2'), url('../fonts/SVN-Avoitalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'sabi';
+    src: url('../fonts/SVN-Avobolditalic.woff2') format('woff2'), url('../fonts/SVN-Avobolditalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'sa';
+    src: url('../fonts/SVN-Avo.woff2') format('woff2'), url('../fonts/SVN-Avo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 's';
+    src: url('../fonts/SFUDINEngAlt.woff2') format('woff2'), url('../fonts/SFUDINEngAlt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'mpb';
+    src: url('../fonts/MyriadPro-BlackSemiCn.woff2') format('woff2'), url('../fonts/MyriadPro-BlackSemiCn.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: fallback;
+}

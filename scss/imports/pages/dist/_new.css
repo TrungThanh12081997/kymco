@@ -1,0 +1,15 @@
+.page__nav {
+  max-height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.page__nav .step {
+  padding: 20px 13px;
+}
+.page__nav-number {
+  --grid: 60px;
+  height: var(--grid);
+  width: var(--grid);
+}

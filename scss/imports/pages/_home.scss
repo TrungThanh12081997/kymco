@@ -1,0 +1,558 @@
+    // CSS HOMEPAGE
+    // Ví dụ
+    @keyframes para {
+        from {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+    
+    @keyframes down {
+        from {
+            opacity: 0;
+            top: -10px;
+        }
+        to {
+            opacity: 1;
+            top: 0;
+        }
+    }
+    
+    .pd {
+        --padding: 90px;
+        padding: var(--padding) 0;
+        @include xs {
+            --padding: 70px;
+        }
+        @include xxs {
+            --padding: 50px;
+        }
+    }
+    
+    .mg {
+        --margin: 90px;
+        margin: var(--margin) 0;
+    }
+    
+    .slider__main {
+        height: 100vh;
+        // overflow: hidden;
+        position: relative;
+        width: 100vw;
+        overflow: hidden;
+        @include xs {
+            height: 500px;
+        }
+        .slider__list {
+            display: flex;
+            height: 100%;
+            .flickity-viewport {
+                width: 100%;
+            }
+            &-item {
+                height: 100%;
+                width: 100vw;
+                position: absolute;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    // @include midimg();
+                    object-fit: cover;
+                }
+            }
+        }
+        .container__fluid {
+            max-width: 100%;
+            padding: 0 50px;
+            z-index: 8;
+            .slider__bottom {
+                position: absolute;
+                bottom: 60px;
+                // display: flex;
+                width: 100%;
+                justify-content: space-between;
+                @include xs {
+                    left: 15px;
+                }
+                .left {
+                    left: 0;
+                    .title {
+                        p {
+                            @include text(48px, sa, 60px, $white-cl, uppercase);
+                            @include xs {
+                                @include text(20px, sa, 35px, $white-cl, uppercase);
+                            }
+                        }
+                        margin-bottom:60px;
+                    }
+                    .down {
+                        width: max-content;
+                        display: flex;
+                        height: max-content;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
+                        transition: down 0.3s ease;
+                        @include xs {
+                            margin-left: -30px;
+                        }
+                        p {
+                            transform: rotate( -90deg);
+                            font-size: 14px;
+                            font-family: ua;
+                            line-height: 21px;
+                            color: #fff;
+                            text-transform: none;
+                            margin-bottom: 50px;
+                        }
+                        img {
+                            width: 22px;
+                            height: 50px;
+                            transform: rotate(360deg);
+                            display: block;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .right {
+                    right: 0;
+                    .contact {}
+                    .number {
+                        position: absolute;
+                        bottom: 0;
+                        position: absolute;
+                        bottom: 0;
+                        right: 125px;
+                        display: flex;
+                        align-items: baseline;
+                        @include xs {
+                            right: 25px;
+                        }
+                        h2 {
+                            @include text(73px, db, 40px, $white-cl, uppercase);
+                            @include xs {
+                                font-size: 24px;
+                            }
+                        }
+                        h3 {
+                            @include text(48px, sa, 34px, $white-cl, uppercase);
+                            opacity: 0.6;
+                            letter-spacing: 0.4px;
+                            @include xs {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .content {
+        --left: 200px;
+        display: flex;
+        max-height: 800px;
+        position: relative;
+        @media (max-width: 992px) {
+            // display: block;
+            padding: 0 15px;
+            height: auto;
+            flex-direction: column;
+        }
+        .number {
+            position: absolute;
+            top: calc(var(--left) /2);
+            left: var(--left);
+            display: flex;
+            @include sm {
+                position: absolute;
+                top: 55%;
+                left: 5%;
+                display: flex;
+                z-index: 4;
+            }
+            h2 {
+                @include text(73px, db, 40px, black-cl, uppercase);
+            }
+            h3 {
+                @include text(48px, sa, 34px, $black-cl, uppercase);
+                opacity: 0.6;
+                letter-spacing: 0.4px;
+            }
+        }
+        &__all {
+            // grid-column: 2/3;
+            // grid-row: 1/2;
+            max-height: 450px;
+            position: relative;
+            width: 60%;
+            @include sm {
+                position: relative;
+                width: 100%;
+                margin: 60px 0;
+            }
+            @include xs {
+                margin-top: 30px;
+            }
+            .content__img {
+                height: 450px;
+                transition: $t;
+                @include xs {
+                    max-height: 450px;
+                }
+                // @include xxs {
+                //     max-height: 300px;
+                // }
+                &-item {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include size(100%, 100%);
+                    img {
+                        @include size(100%, 100%);
+                        object-fit: cover;
+                    }
+                }
+            }
+            .content__btn {
+                display: flex;
+                width: max-content;
+                position: absolute;
+                bottom: 0;
+                left: -60px;
+                @include sm {
+                    left: 0px;
+                    // bottom: 50%;
+                }
+                z-index: 4;
+                .btn-prev,
+                .btn-next {
+                    --width: 60px;
+                    width: var(--width);
+                    height: var(--width);
+                    background-color: $main-cl;
+                    @include mid(true);
+                    cursor: pointer;
+                    z-index: 4;
+                }
+                .btn-prev {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 10px;
+                        height: 40px;
+                        width: 4px;
+                        right: 0px;
+                        background-color: $white-cl;
+                    }
+                }
+            }
+        }
+        &__para {
+            grid-column: 1/3;
+            grid-row: 1/2;
+            max-width: 490px;
+            z-index: 10;
+            margin-left: var(--left);
+            position: relative;
+            width: 60%;
+            z-index: 0;
+            transition: para $t ease-in;
+            @media (max-width: 992px) {
+                margin-left: 0px;
+            }
+            @include sm {
+                margin-left: 0px;
+                width: 100%;
+                max-width: 100vw;
+                text-align: center;
+            }
+            &-item {
+                position: absolute;
+                padding-top: 70px;
+                width: 100%;
+                @include xs {
+                    padding-top: 0px;
+                }
+                h4 {
+                    @include text(35px, s, 35px, black, uppercase);
+                    margin: 30px 0 30px 0;
+                }
+                // &::before {
+                //     content: "";
+                //     position: absolute;
+                //     top: -17px;
+                //     left: -870px;
+                //     background-color: #000;
+                //     width: 1000px;
+                //     height: 4px;
+                // }
+                h2 {
+                    @include text(60px, s, 74px, black, uppercase);
+                    margin: 30px 0 30px 0;
+                    position: relative;
+                    @include xs {
+                        @include text(28px, s, 35px, black, uppercase);
+                    }
+                    &::before {
+                        position: absolute;
+                        height: 3px;
+                        background-color: black;
+                        top: 17px;
+                        width: 100px;
+                        left: 0;
+                        z-index: 1;
+                    }
+                    @media (max-width:992px) {
+                        margin: 30px 0 20px 0;
+                        // @include text(24px, s, 40px, black, uppercase);
+                    }
+                }
+                p {
+                    @include text(22px, ua, 27px, black, uppercase);
+                    max-width: 500px;
+                    @media (max-width: 992px) {
+                        // @include text(12px, ua, 24px, black, uppercase);
+                    }
+                    @include sm {
+                        max-width: 100%;
+                    }
+                    @include xs {
+                        @include text(16px, ua, 35px, black, uppercase);
+                    }
+                }
+            }
+        }
+    }
+    
+    .product {
+        @include sm {
+            margin: 100px 0;
+        }
+        @include xs {
+            margin: 0;
+        }
+        .container {
+            .product__content {
+                h2 {
+                    width: 100%;
+                    text-align: center;
+                    @include text(60px, s, 60px, $black-cl, uppercase);
+                    @media (max-width: 992px) {
+                        // @include text(24px, s, 40px, black, uppercase);
+                    }
+                    @include xs {
+                        @include text(28px, s, 56px, $black-cl, uppercase);
+                    }
+                }
+                p {
+                    width: 100%;
+                    text-align: center;
+                    @include text(22px, ua, 22px, $black-cl, none);
+                    margin: 25px 0 90px 0;
+                    ;
+                    @media (max-width: 992px) {
+                        height: max-content;
+                        @media (max-width: 992px) {
+                            // @include text(12px, ua, 24px, black, uppercase);
+                            margin: 25px 0 40px 0;
+                        }
+                    }
+                    @include xs {
+                        @include text(16px, ua, 32px, $black-cl, uppercase);
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .container {
+            .product__grid {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @include sm {
+                    flex-direction: column;
+                }
+                .product__box {
+                    max-width: 290px;
+                    max-height: 430px;
+                    position: relative;
+                    @include sm {
+                        margin: 30px 0;
+                    }
+                    &-content {
+                        position: absolute;
+                        left: 20px;
+                        top: 20px;
+                        h2 {
+                            @include text(48px, db, 48px, $white-cl, none);
+                            // @media (max-width: 992px) {
+                            //     @include text(24px, s, 40px, black, uppercase);
+                            // }
+                        }
+                        h3 {
+                            @include text(48px, db, 48px, $white-cl, none);
+                            margin-bottom: 10px;
+                            // @media (max-width: 992px) {
+                            //     @include text(24px, s, 40px, black, uppercase);
+                            // }
+                        }
+                        h4 {
+                            @include text(12px, sr, 15px, $white-cl, uppercase);
+                            background-color: $main-cl;
+                            padding: 10px 25px;
+                            border-radius: 4px;
+                            // @media (max-width: 992px) {
+                            //     @include text(24px, s, 40px, black, uppercase);
+                            // }
+                        }
+                    }
+                    // .product__img {
+                    //     img {
+                    //         width: 100%;
+                    //         height: 100%;
+                    //     }
+                    // }
+                }
+                .product__box.main {
+                    max-width: 400px;
+                    max-height: 670px;
+                    position: relative;
+                    &-content {
+                        position: absolute;
+                        left: 20px;
+                        top: 20px;
+                        h2 {
+                            @include text(48px, db, 48px, $white-cl, none);
+                        }
+                        h3 {
+                            @include text(48px, db, 48px, $white-cl, none);
+                            margin-bottom: 10px;
+                        }
+                        h4 {
+                            @include text(12px, sr, 15px, $white-cl, uppercase);
+                            background-color: $main-cl;
+                            padding: 10px 25px;
+                            border-radius: 4px;
+                        }
+                    }
+                }
+            }
+        }
+        .mid {
+            font-family: s;
+            font-size: 60px;
+            line-height: 63px;
+            text-transform: uppercase;
+            color: black;
+            display: flex;
+            margin-left: 50px;
+            padding: 0 50px;
+            margin-bottom: 70px;
+            justify-content: center;
+            @include mid(true);
+            margin-top: 30px;
+        }
+    }
+    
+    .background {
+        position: relative;
+        height: 600px;
+        width: 100vw;
+        background-image: url(../img/img-home/choose2.png);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // margin: 100px 0;
+        @include sm {
+            // margin: 100px 0;
+        }
+        @include xs {
+            margin-top: 100px;
+            height: 400px;
+        }
+        .background__img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                @include midimg();
+                object-fit: cover;
+            }
+            .bg__desk {
+                display: block;
+                @media (max-width: 992px) {
+                    display: none;
+                }
+            }
+            .bg__mb {
+                display: none;
+                max-height: 180px;
+                @media (max-width: 992px) {
+                    display: block;
+                }
+            }
+        }
+        .background__content {
+            position: absolute;
+            top: 5%;
+            left: 165px;
+            max-width: 470px;
+            z-index: 1;
+            @include xs {
+                top: 20%;
+                left: 15px;
+            }
+            h2 {
+                @include text(60px, s, 80px, $black-cl, uppercase);
+                max-width: 300px;
+                @include xs {
+                    @include text(28px, s, 56px, $black-cl, uppercase);
+                }
+            }
+            p {
+                margin: 20px 0 40px;
+                @include text(22px, ua, 22px, $black-cl, uppercase);
+                @include xs {
+                    margin: 10px 0;
+                    @include text(16px, ua, 32px, $black-cl, uppercase);
+                }
+            }
+        }
+    }
+    
+    .new {
+        width: 100vw;
+        text-align: center;
+        margin-top: 90px;
+        position: relative;
+        // @include xs {
+        //     padding: 0 15px;
+        // }
+        h2 {
+            @include text(60px, s, 80px, $black-cl, uppercase);
+            @include xs {
+                @include text(28px, s, 56px, $black-cl, uppercase);
+                padding: 0 15px;
+            }
+        }
+        p {
+            @include text(22px, ua, 12px, $black-cl, none);
+            margin: 20px 0 80px 0;
+            @include xs {
+                @include text(16px, ua, 32px, $black-cl, uppercase);
+                margin: 0;
+                padding: 0 15px;
+            }
+        }
+    }

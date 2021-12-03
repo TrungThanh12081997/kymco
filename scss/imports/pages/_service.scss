@@ -1,0 +1,162 @@
+.banner {
+    // background-image: url(../img/banner.png);
+    // background-position: center;
+    // background-attachment: fixed;
+    // background-repeat: no-repeat;
+    height: 700px;
+    width: 100%;
+    position: relative;
+    @include xs {
+        height: 500px;
+    }
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: flex;
+        top: 40%;
+        flex-direction: column;
+        text-align: center;
+        @include xs {
+            padding: 0 15px;
+        }
+        h2 {
+            @include text(70px, s, 150px, white, uppercase);
+            @include xs {
+                @include text(35px, s, 55px, white, uppercase);
+            }
+        }
+        p {
+            @include xs {
+                @include text(20px, ua, 25px, white, uppercase);
+            }
+            @include text(25px, ua, 38px, white, uppercase);
+        }
+    }
+}
+
+.faq {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        @include sm {
+            align-items: center;
+            flex-direction: column;
+            // margin: -50px 0;
+        }
+        .faq__left {
+            .span {
+                @include text(40px, s, 40px, black, uppercase);
+                position: absolute;
+                left: 0;
+                top: -100px;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: relative;
+            .faq__list {
+                --number: 360px;
+                background-color: $main-cl;
+                width: var(--number);
+                height: var(--number);
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                padding: 40px 0 40px 60px;
+                overflow: hidden;
+                &-item {
+                    &:hover::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: -45px;
+                        transition: .4s;
+                        background-color: white;
+                        height: 4px;
+                        width: 35px;
+                    }
+                    &.active {
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: -45px;
+                            transition: .4s;
+                            background-color: white;
+                            height: 4px;
+                            width: 35px;
+                        }
+                    }
+                    @include text(30px, s, 30px, white, uppercase);
+                    cursor: pointer;
+                    position: relative;
+                    margin: 10px 0;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: -15px;
+                        transition: $t;
+                        background-color: white;
+                        height: 4px;
+                        width: 4px;
+                    }
+                }
+            }
+        }
+        .faq__content {
+            width: 50vw;
+            @include sm {
+                width: 100vw;
+                padding: 00 15px;
+            }
+            .faq__para {
+                position: relative;
+                @include text(30px, s, 35px, black, uppercase);
+                height: 90%;
+                // display: none;
+                @include sm {
+                    min-height: 650px;
+                    @include mid(true);
+                }
+                &-item {
+                    // text-align: center;
+                    @include sm {
+                        text-align: left;
+                    }
+                    position: absolute;
+                    @include visible(0);
+                    transition: $t;
+                    @include xs {
+                        @include text(22px, s, 26px, black, none)
+                    }
+                    &.open {
+                        @include visible(1);
+                    }
+                    .faq__btn {
+                        margin: 30px 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+            a {
+                margin: 30px 0;
+            }
+        }
+    }
+}

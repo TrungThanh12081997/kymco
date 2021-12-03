@@ -1,0 +1,82 @@
+               .mg {
+                   margin: 50px 0;
+               }
+               
+               .register {
+                   display: flex;
+                   align-items: end;
+                   margin-right: 240px;
+                   width: 100%;
+                   min-height: 710px;
+                   &__img {
+                       max-width: 650px;
+                       height: 100%;
+                       img {
+                           object-fit: cover;
+                           // @include midimg();
+                           width: 100%;
+                           height: 100%;
+                       }
+                       @include sm {
+                           display: none;
+                       }
+                   }
+                   &__input {
+                       padding-left: 100px;
+                       @include xs {
+                           padding-left: 15px;
+                           padding-right: 15px
+                       }
+                       .register__content {
+                           h2 {
+                               @include text(50px, s, 50px, black, uppercase);
+                               @include xs {
+                                   @include text(35px, s, 40px, black, uppercase);
+                               }
+                           }
+                           p {
+                               @include text(30px, s, 70px, black, none);
+                               @include xs {
+                                   @include text(22px, s, 30px, black, uppercase);
+                                   margin: 20px 0;
+                               }
+                           }
+                       }
+                       .register__input {
+                           padding: 0;
+                           height: max-content;
+                           .col {
+                               width: 100%;
+                               display: flex;
+                               justify-content: space-between;
+                               padding: 0;
+                               @include sm {
+                                   flex-direction: column;
+                               }
+                               input {
+                                   width: 48%;
+                                   margin-bottom: 30px;
+                                   @include text(22px, ua, 22px, black, none);
+                                   padding: 15px 0;
+                                   border-top: none;
+                                   border-left: none;
+                                   border-right: none;
+                                   border-bottom: 1px solid black;
+                                   background: none;
+                                   outline: 0;
+                                   @include sm {
+                                       width: 100%;
+                                       @include text(22px, ua, 22px, black, none);
+                                   }
+                                   @include xs {
+                                       width: 100%;
+                                       @include text(16px, ua, 22px, black, none);
+                                   }
+                               }
+                               input.fw {
+                                   width: 100%;
+                               }
+                           }
+                       }
+                   }
+               }

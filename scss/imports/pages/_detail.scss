@@ -1,0 +1,205 @@
+.detail {
+    .flex {
+        --number: 60px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        height: fit-content;
+        // @include xs {
+        //     --number: 40px;
+        // }
+        .black {
+            background-color: black;
+        }
+        .white {
+            background-color: white;
+        }
+        .red {
+            background-color: red;
+        }
+        .red,
+        .black,
+        .white {
+            width: var(--number);
+            margin: 0 10px;
+            height: var(--number);
+            border: 0.05px solid grey;
+        }
+        @media (max-width: 992px) {
+            --number: 30px;
+        }
+    }
+    .detail__content {
+        max-width: 850px;
+        margin: 0 auto;
+        text-align: center;
+        h2 {
+            @include text(80px, s, 102px, black, uppercase);
+            @include xs {
+                @include text(60px, s, 90px, black, uppercase);
+            }
+        }
+        h3 {
+            @include text(30px, s, auto, black, uppercase);
+            @include xs {
+                @include text(22px, s, 28px, black, uppercase);
+            }
+        }
+        p {
+            @include text(22px, ua, auto, black, uppercase);
+            @include xs {
+                @include text(16px, ua, 22px, black, uppercase);
+                margin: 0;
+            }
+            margin: 43px 0;
+        }
+        .price {
+            margin-top: 80px;
+            h3 {
+                position: relative;
+                @include text(35px, s, auto, black, uppercase);
+                @include xs {
+                    @include text(28px, s, 35px, black, uppercase);
+                }
+                &::before {
+                    content: "";
+                    height: 2px;
+                    width: 70px;
+                    background-color: #000;
+                    position: absolute;
+                    bottom: 55px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            h2 {
+                @include text(70px, s, auto, black, uppercase);
+                @include xs {
+                    @include text(58px, s, 64px, black, uppercase);
+                }
+            }
+        }
+    }
+    .detail__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+        display: flex;
+        @media (max-width: 992px) {
+            display: block;
+        }
+        .weight {
+            display: flex;
+            &__item {
+                padding: 0 20px 0 20px;
+                p {
+                    @include text(20px, ua, 22px, black, uppercase);
+                    padding-bottom: 10px;
+                    @include xs {
+                        @include text(16px, ua, 22px, black, uppercase);
+                    }
+                }
+                h2 {
+                    @include text(49px, s, 52px, black, uppercase);
+                    @include xs {
+                        @include text(40px, s, 48px, black, uppercase);
+                    }
+                }
+            }
+        }
+        .detail__info-bike {
+            width: 50%;
+            @media (max-width: 992px) {
+                width: 100%;
+            }
+            .detail__img {
+                margin: 50px 0 0 0;
+                position: relative;
+                .front,
+                .long,
+                .height {
+                    @include text(30px, s, 40px, black, uppercase);
+                }
+                .front {
+                    position: absolute;
+                    top: 100%;
+                    left: 5%;
+                }
+                .long {
+                    position: absolute;
+                    top: 100%;
+                    right: 7%;
+                }
+                .height {
+                    position: absolute;
+                    top: 45%;
+                    right: -10%;
+                    transform: rotate( 90deg);
+                    @include xs {
+                        top: -15%;
+                    }
+                }
+            }
+        }
+        .detail__accor {
+            width: 40%;
+            @media (max-width: 992px) {
+                width: 100%;
+                margin-top: 80px;
+            }
+            h2 {
+                @include text(60px, s, 80px, black, uppercase);
+                @include xs {
+                    @include text(46px, s, 60px, black, uppercase);
+                }
+            }
+            .accor {
+                .accor__item {
+                    &-content {
+                        position: relative;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            right: 10%;
+                            top: 50%;
+                            background-color: black;
+                            width: 55%;
+                            height: 4px;
+                        }
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        align-items: center;
+                        cursor: pointer;
+                        h3 {
+                            @include text(35px, s, 60px, black, uppercase);
+                            @include xs {
+                                @include text(30px, s, 50px, black, uppercase);
+                            }
+                        }
+                        i {}
+                    }
+                    .accor__para {
+                        // height: 0;
+                        transition: $t;
+                        display: none;
+                        &.open {
+                            display: block;
+                        }
+                        .div {
+                            display: flex;
+                            justify-content: space-between;
+                            & span {
+                                @include text(18px, ua, 25px, black, none);
+                                @include xs {
+                                    @include text(12px, ua, 18px, black, none);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
